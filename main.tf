@@ -239,4 +239,5 @@ resource "aws_db_instance" "MySQL_DB" {
   parameter_group_name   = "default.mysql5.7"
   db_subnet_group_name   = aws_db_subnet_group.DB_Subnet_Group.name
   vpc_security_group_ids = [aws_security_group.SG_DB_MySQL.id]
+  skip_final_snapshot    = true
 }
