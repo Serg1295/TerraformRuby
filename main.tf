@@ -200,7 +200,7 @@ resource "aws_instance" "EC2_Ruby" {
 #----------------------------------------------------------------------
 resource "aws_db_subnet_group" "DB_Subnet_Group" {
   name       = "DB_Subnet_Group"
-  subnet_ids = [aws_subnet.Private-A.id, aws_subnet.Private-B.id, aws_subnet.Public-C.id]
+  subnet_ids = [aws_subnet.Private-A.id, aws_subnet.Private-B.id]
 
   tags = {
     Name = "DB_subnet_group"
