@@ -199,7 +199,6 @@ resource "aws_instance" "EC2_Ruby" {
 }
 #----------------------------------------------------------------------
 resource "aws_db_subnet_group" "DB_Subnet_Group" {
-  name       = "DB_Subnet_Group"
   subnet_ids = [aws_subnet.Private-A.id, aws_subnet.Private-B.id]
 
   tags = {
@@ -216,7 +215,7 @@ resource "aws_security_group" "SG_DB_MySQL" {
       from_port   = ingress.value
       to_port     = ingress.value
       protocol    = "tcp"
-      cidr_blocks = aws_vpc.VPC.cidr_block
+      cidr_blocks = [aws_vpc.VPC.cidr_block]
     }
   }
   egress {
