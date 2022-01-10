@@ -11,5 +11,5 @@ rvm requirements
 rvm install ruby-2.6.6
 rvm use 2.6.6 --default
 gem install rails --version=5.2.6
-gem install rake --version=13.0.6
+bundle install
 sudo apt install nodejs -y
